@@ -1,0 +1,88 @@
+/* stadard styles to be used across all web pages */
+
+/* fluid typography */
+html {
+    font-size: calc(.5em + .5vw);
+  }
+
+  .text-small {
+    font-size: .8em;
+  }
+
+  .text-large {
+    font-size: 1.2em;
+  }
+
+  .text-underline {
+    text-decoration: underline;
+  }
+
+  .text-bold {
+    font-weight: bold;
+  }
+
+  .text-italic {
+    font-style: italic;
+  }
+
+  .text-truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* colors */
+  .bg-color1 {
+    background: #4db6ac ;
+  }
+
+  .bg-color2 {
+    background: #334B48
+  }
+
+  .bg-color3 {
+    background: #96B1AD;
+  }
+
+  .bg-color4 {
+    background: #88A6E0;
+  }
+
+  .bg-color5 {
+    background: #5273A9;
+  }
+
+  .text-black {
+    color: #000;
+  }
+
+  .text-gray {
+    color: #808080;
+  }
+
+  .text-white {
+    color: #fff;
+  }
+
+  /* fluid grid */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 30px);
+  }
+
+  /* make non text elements responsive */
+  img,
+  embed,
+  object,
+  iframe {
+    width: 100%;
+  }
+
+  /* ensure touch targets can be reached on small devices */
+  nav,
+  a,
+  button {
+    min-width: 40px;
+    min-height: 40px;
+  }
