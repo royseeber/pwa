@@ -1,88 +1,93 @@
 /* stadard styles to be used across all web pages */
 
-/* fluid typography */
+/* typography */
 html {
-    font-size: calc(.5em + .5vw);
-  }
+  font-size: 16px;
+  --color1: #00838f;
+  --color2: #324B4E;
+  --color3: #95B0B4;
+  --black: #000;
+  --white: #fff;
+}
 
-  .text-small {
-    font-size: .8em;
-  }
 
-  .text-large {
-    font-size: 1.2em;
-  }
+.text-small {
+  font-size: .8em;
+}
 
-  .text-underline {
-    text-decoration: underline;
-  }
+.text-large {
+  font-size: 1.2em;
+}
 
-  .text-bold {
-    font-weight: bold;
-  }
+.text-underline {
+  text-decoration: underline;
+}
 
-  .text-italic {
-    font-style: italic;
-  }
+.text-bold {
+  font-weight: bold;
+}
 
-  .text-truncate {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
+.text-italic {
+  font-style: italic;
+}
 
-  /* colors */
-  .bg-color1 {
-    background: #4db6ac ;
-  }
+/* colors */
+.bg-color1 {
+  background: var(--color1) ;
+}
 
-  .bg-color2 {
-    background: #334B48
-  }
+.bg-color2 {
+  background: var(--color2);
+}
 
-  .bg-color3 {
-    background: #96B1AD;
-  }
+.bg-color3 {
+  background: var(--color3);
+}
 
-  .bg-color4 {
-    background: #88A6E0;
-  }
+.bg-black {
+  background: var(--black);
+}
 
-  .bg-color5 {
-    background: #5273A9;
-  }
+.bg-white  {
+  background: var(--white);
+}
 
-  .text-black {
-    color: #000;
-  }
+.text-black {
+  color: #000;
+}
 
-  .text-gray {
-    color: #808080;
-  }
+.text-white {
+  color: #fff;
+}
 
-  .text-white {
-    color: #fff;
-  }
+/* links */
+a {
+  font-weight: bold;
+  font-size: 1.1em;
+  color: var(--color1);
+}
 
-  /* fluid grid */
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(12, 30px);
-  }
+a:visited {
+  text-decoration: none;
+}
 
-  /* make non text elements responsive */
-  img,
-  embed,
-  object,
-  iframe {
-    width: 100%;
-  }
+a:link {
+  text-decoration: none;
+}
 
-  /* ensure touch targets can be reached on small devices */
-  nav,
-  a,
-  button {
-    min-width: 40px;
-    min-height: 40px;
-  }
+/* make non text elements responsive */
+img,
+embed,
+object,
+iframe {
+  width: 100%;
+  height: auto;
+}
+
+/* ensure touch targets can be reached on small devices */
+nav,
+a,
+button {
+  min-width: 40px;
+  min-height: 40px;
+}

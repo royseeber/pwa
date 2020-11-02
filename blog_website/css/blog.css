@@ -1,32 +1,23 @@
 
 @import url(styles.css);
-/*
 @import url(header.css);
+/*
 @import url(footer.css);
 */
 /* Blog Styles */
-
-/* page layout styles */
-main {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-gap: 10px;
-}
-
-.content {
+.blog-posts {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: start;
   justify-items: flex-start;
-  grid-column: 1 / span 12;
-}
+ }
 
-/* page component styles */
 .card {
   display: flex;
   flex-direction: column;
-  width: 300px;
+  justify-content: space-around;
+  max-width: 400px;
   height: auto;
   padding: 10px;
   margin: 5px;
@@ -35,8 +26,7 @@ main {
 }
 
 .card-title {
-  font-size:.9em;
-  font-weight: bold;
+   font-weight: bold;
  }
 
 .card-bottom {
@@ -46,8 +36,9 @@ main {
   align-items: center;
 }
 
-
-
+.feature-card {
+  box-shadow: 5px 5px;
+}
 
 
 

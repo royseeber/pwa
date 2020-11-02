@@ -1,9 +1,33 @@
+@import url(styles.css);
+@import url(header.css);
+@import url(footer.css);
+
+/* blog post styles */
+
 /* format inline code block */
-pre code {
-    background-color: #eee;
-    border: 1px solid #999;
-    display: block;
-    padding: 20px;
-  }
+code {
+  background-color: #eee;
+  display: block;
+}
+
+.demo-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 30px);
+  grid-gap: 10px;
+  border: 2px solid black;
+}
+
+.demo-box {
+  display: flex;
+  grid-column: 4 / span 6;
+  grid-row: 4 / span 6;
+  background: red;
+}
+
+.text-responsive {
+  font-size: calc(1em + 1vw);
+}
+
 
 

@@ -1,0 +1,34 @@
+/* header styles */
+.header {
+    display: grid;
+    grid-template-columns:  1fr 3fr;
+    grid-template-rows: 50px;
+    grid-gap: 10px;
+    margin-top: 30px;
+  }
+
+  .logo {
+    grid-column: 1;
+    grid-row: 1;
+    width: 100%;
+    height: 100%;
+   }
+
+  .navbar {
+    display: flex;
+    grid-column: 2;
+    grid-row: 1;
+    width: 100%;
+    flex-direction: column;
+    border-radius: 10px;
+    background: var(--color1);
+   }
+
+   .btn-subscribe {
+       height: 30px;
+       width: 100%;
+       max-width: 60px;
+       background: var(--color1);
+       color: var(--white);
+       border-radius: 8px;
+   }
