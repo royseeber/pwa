@@ -1,0 +1,21 @@
+@import url(../blog-post.css);
+
+/* custom styles */
+.demo-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 30px);
+  grid-gap: 10px;
+  border: 2px solid black;
+}
+
+.demo-box {
+  display: flex;
+  grid-column: 4 / span 6;
+  grid-row: 4 / span 6;
+  background: red;
+}
+
+.text-responsive {
+  font-size: calc(1em + 1vw);
+}

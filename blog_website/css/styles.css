@@ -1,16 +1,15 @@
 /* stadard styles to be used across all web pages */
-
-/* typography */
 html {
   font-size: 16px;
   --color1: #00838f;
   --color2: #324B4E;
   --color3: #95B0B4;
   --black: #000;
+  --gray: #888;
   --white: #fff;
 }
 
-
+/* text styles */
 .text-small {
   font-size: .8em;
 }
@@ -31,7 +30,23 @@ html {
   font-style: italic;
 }
 
-/* colors */
+.text-center {
+  text-align: center;
+}
+
+.text-black {
+  color: var(--black);
+}
+
+.text-gray {
+  color: var(--gray);
+}
+
+.text-white {
+  color: var(--white);;
+}
+
+/* background colors */
 .bg-color1 {
   background: var(--color1) ;
 }
@@ -52,14 +67,6 @@ html {
   background: var(--white);
 }
 
-.text-black {
-  color: #000;
-}
-
-.text-white {
-  color: #fff;
-}
-
 /* links */
 a {
   font-weight: bold;
@@ -73,6 +80,13 @@ a:visited {
 
 a:link {
   text-decoration: none;
+}
+
+/* style for formatting messages */
+.notice {
+  width: 60%;
+  border: 3px solid var(--color1);
+  padding: 10px;
 }
 
 /* make non text elements responsive */

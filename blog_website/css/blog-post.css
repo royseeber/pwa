@@ -3,31 +3,45 @@
 @import url(footer.css);
 
 /* blog post styles */
-
-/* format inline code block */
-code {
-  background-color: #eee;
-  display: block;
-}
-
-.demo-grid {
+.blog-post {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(12, 30px);
-  grid-gap: 10px;
-  border: 2px solid black;
+  grid-gap: 20px;
+  grid-template-areas:
+    "share"
+    "post-title"
+    "post-image"
+    "author"
+    "content";
 }
 
-.demo-box {
+.share-container {
   display: flex;
-  grid-column: 4 / span 6;
-  grid-row: 4 / span 6;
-  background: red;
+  height: 50px;
+  grid-area: share;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
 }
 
-.text-responsive {
-  font-size: calc(1em + 1vw);
+.share-icon {
+  width: 50px;
+  font-size: 30x;
+  margin-right: 5px;
 }
+
+.post-title {
+   text-align: center;
+   font-weight: bold;
+   font-size: 1.2em;
+}
+
+.post-image {
+  display: flex;
+  grid-area: post-image;
+  height: 200px;
+ }
 
 
 
