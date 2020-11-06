@@ -8,6 +8,7 @@ html {
   --color2: #324B4E;
   --color3: #95B0B4;
   --black: #000;
+  --light-gray: #D3D3D3;
   --gray: #888;
   --white: #fff;
   --bkp-small: 480px;
@@ -23,17 +24,16 @@ h3,
 p {
   margin-top: 0;
   margin-bottom: 1em;
-  padding-bottom: .2em;
+  padding: 0;
+
 }
 
 h1 {
   font-size: 2em;
-  padding-bottom: .2em;
   text-transform: capitalize;
 }
 
 h2 {
-  border-bottom: 1px solid var(--gray);
   font-size: 1.75em;
   margin-bottom: .75em;
   padding-bottom: .2em;
@@ -65,6 +65,12 @@ a:visited {
 
 a:link {
   text-decoration: none;
+}
+
+/* pre formatted text for displaying code */
+pre {
+  overflow-x: auto;
+  background: var(--light-gray);
 }
 
 /* make non text elements responsive */
@@ -152,7 +158,7 @@ button {
   background: var(--black);
 }
 
-.bg-white  {
+.bg-white {
   background: var(--white);
 }
 
@@ -162,5 +168,5 @@ button {
   cursor: default;
   text-decoration: none;
   color: var(--gray);
-  }
 }
+

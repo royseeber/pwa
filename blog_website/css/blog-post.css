@@ -5,7 +5,6 @@
 /* blog post styles */
 .blog-post {
   display: grid;
-  grid-gap: 20px;
   grid-template-areas:
     "share"
     "post-title"
@@ -23,7 +22,8 @@
   align-items: center;
   padding: 10px;
   cursor: pointer;
-}
+  margin-bottom: 20px;
+ }
 
 .share-icon {
   width: 50px;
@@ -31,17 +31,27 @@
   margin-right: 5px;
 }
 
-.post-title {
-   text-align: center;
-   font-weight: bold;
-   font-size: 1.2em;
-}
-
-.post-image {
+.post-image-container {
   display: flex;
+  height: 220px;
   grid-area: post-image;
-  height: 200px;
+  flex-direction: column;
+  margin-bottom: 20px;
  }
 
+.post-image {
+  height: 200px;
+}
+
+.post-image-caption {
+  background: var(--black);
+  color: var(--white);
+  text-align: center;
+}
+
+ .post-intro {
+   padding: 10px;
+   font-size: 1.2em;
+ }
 
 

@@ -10,106 +10,104 @@
     <header class="header">
         <a href="../index.html"><img class="logo" src="../img/pwa.png"></a>
         <div class="navbar">
-            <a class="button" href="../pages/placeholder.html">About</a>
-            <a class="button" href="../pages/placeholder.html">Contact</a>
-            <a class="button" href="../pages/placeholder.html">Subscribe</a>
+            <a class="nav-button" href="../pages/placeholder.html">About</a>
+            <a class="nav-button" href="../pages/placeholder.html">Contact</a>
+            <a class="nav-button" href="../pages/placeholder.html">Subscribe</a>
         </div>
     </header>
-    <section class="blog-post">
+    <main class="blog-post">
         <div class="share-container">
             <a href="../pages/placeholder.html"><img class="share-icon" src="../img/facebook.png" alt="facebook icon"></a>
             <a href="../pages/placeholder.html"><img class="share-icon" src="../img/linkedin.png" alt="linkedin icon"></a>
             <a href="../pages/placeholder.html"><img class="share-icon" src="../img/twitter.png" alt="twitter icon"></a>
         </div>
-        <div class="post-title">
-            Should You Give Bootstrap The Boot?
+        <div class="post-title text-center">
+            <h1>Should You Give Bootstrap The Boot?</h1>
         </div>
-        <div class="post-image">
-            <img src="../img/css_grid.png" alt="blog post image">
+        <div class="post-image-container">
+            <img class="post-image" src="../img/css_grid.png" alt="blog post image">
+            <p class="post-image-caption">CSS - GRID</p>
         </div>
-    </section>
-    <div class="text-large">
-        If you are like me, you would have come across frameworks like Bootstrap while trying to figure out the nuances
-        of responsive design. You probably sat down over a weekend and began playing around with container, row and column classes
-        unable to <b>contain</b> your excitement as columns began automatically appearing and disappearing as you resized your screen.
-        With the advent of HTML 5 and the CSS Grid component this has now become child's play.
-    </div>
-     <section>
+        <p class="post-intro">
+            If you are like me, you would have come across frameworks like Bootstrap while trying to figure out the nuances
+            of responsive design. You probably sat down over a weekend and began playing around with container, row and column classes
+            unable to <b>contain</b> your excitement as columns began automatically appearing and disappearing as you resized your screen.
+            With the advent of HTML 5 and the CSS Grid component this has now become child's play.
+        </p>
         <h2 class="text-center">CSS Grid Demo</h2>
         <p>
             With just a few lines of code you can set up a grid that is not only responsive but fluid. In other words it will
             dynamically resize itself as you resize your screen. The following sets up an 12 x 12 grid where the columns are sized
             as fractional units of equal size. A fractional unit represents the actual available space, after subtracting out the
-            space used up by fixed size elements, margins and padding.
+            space used up by fix"ed size elements, margins and padding.
         </p>
-<pre><code>
-.demo-grid {
-    display: grid;
-    grid-template-columns:
-        repeat(12, 1fr);
-    grid-template-rows:
-        repeat(12, 30px);
-    grid-gap: 10px;
-    border: 2px solid black;
-}
-</code></pre>
+        <pre><code>
+<!-------->.demo-grid {
+<!-------->   display: grid;
+<!-------->   grid-template-columns: repeat(12. fr);
+<!-------->   grid-template-rows:
+<!-------->   repeat(12, 30px);
+<!-------->   grid-gap: 10px;
+<!-------->   border: 2px solid black;
+<!-------->}
+        </code></pre>
         <p>
             We can then reference any area of the grid with simple column and row number references like this.
         </p>
-<pre><code>
-.demo-box {
-    grid-column: 4 / span 6;
-    grid-row: 4 / span 6;
-    background: red;
-}
-</code></pre>
+        <pre><code>
+<!-------->.demo-box {
+<!-------->   grid-column: 4 / span 6;
+<!-------->   grid-row: 4 / span 6;
+<!-------->   background: red;
+<!-------->}
+        </code></pre>
+        <p>
+            The above is saying, draw a bounding box starting at column 4 extending across 6 columns,
+            and starting at row 4 extending down 6 rows.
+        </p>
         <p>
             Now we will create the html code to draw a box centered inside the grid. If you are on a laptop or desktop,
             go ahead and resize you browser window. Notice how the box inside the grid shrinks and grows while maintaining
             its position relative to the grid. If you are reading this on your smart phone you will have to wait until you
             get home to try it out.
         </p>
-<pre><code>
-&lt;div class="demo-grid"&gt;
-    &lt;div class="demo-box">
-    &lt;/div&gt;
-&lt;/div&gt;
-
-</code></pre>
+        <pre><code>
+<!-------->&lt;div class="demo-grid"&gt;
+<!-------->   div class="demo-box">
+<!-------->   &lt;/div&gt;
+<!-------->&lt;/div&gt;
+        </code></pre>
         <div class='demo-grid'>
             <div class="demo-box">
             </div>
         </div>
-    </section>
-    <section>
         <h2 class="text-center">Responsive Text Demo</h2>
         <p>
             Another item that is getting a fair amout of press these days is fluid typography which is just a fancy way
             of saying "responsive text". I will now demonstrate just how trivial this amazing feat is.
         </p>
-<pre><code>
-.text-responsive {
-  font-size: calc(1em + 1vw);
-}
-</code></pre>
+        <pre><code>
+<!-------->.text-responsive {
+<!-------->  font-size: calc(1em + 1vw);
+<!-------->}
+        </code></pre>
         <p>
             That's it. Its literally a 1 liner! Lets take a look and some html to see the effect.
             Resize your screen once again and notice how the text shrinks and grows based on the width of
             your browser window.
         </p>
-<pre><code>
-&lt;div class="text-responsive"&gt;
-    &lt;h1&gt;Header 1&lt;/h1&gt;
-    &lt;h2&gt;Header 2&lt;/h2&gt;
-    &lt;h3&gt;Header 3&lt;/h3&gt;
-    &lt;h4&gt;Header 4&lt;/h4&gt;
-    &lt;h5&gt;Header 5&lt;/h5&gt;
-    &lt;h6&gt;Header 6&lt;/h6&gt;
-    &lt;p&gt;This is a Paragraph&lt;/p&gt;
-&lt;/div&gt;
-
-</code></pre>
-       <div class="text-responsive">
+        <pre><code>
+<!-------->&lt;div class="text-responsive"&gt;
+<!-------->   &lt;h1&gt;Header 1&lt;/h1&gt;
+<!-------->   &lt;h2&gt;Header 2&lt;/h2&gt;
+<!-------->   &lt;h3&gt;Header 3&lt;/h3&gt;
+<!-------->   &lt;h4&gt;Header 4&lt;/h4&gt;
+<!-------->   &lt;h5&gt;Header 5&lt;/h5&gt;
+<!-------->   &lt;h6&gt;Header 6&lt;/h6&gt;
+<!-------->   &lt;p&gt;This is a Paragraph&lt;/p&gt;
+<!-------->&lt;/div&gt;
+        </code></pre>
+        <div class="text-responsive">
            <h1>Header 1</h1>
            <h2>Header 2</h2>
            <h3>Header 3</h3>
@@ -117,14 +115,11 @@
            <h5>Header 5</h5>
            <h6>Header 6</h6>
            <p>This is a paragraph</p>
-       </div>
-    </section>
-    <hr>
-    <section>
+        </div>
+        <br><br>
         <h2 class="text-center">Final Thoughts</h2>
         <p>If you want to experiment with these ideas on your own, make sure you have the following meta tag in
             the head section of your html page.
-            <br>
             &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
         </p>
         <p>
@@ -134,6 +129,6 @@
             that keep you trapped inside another persons head. Say goodbye to Bootstrap, Materialize, JQuery , React,
             Angular and all the other bloatware. Say hello to becoming your own designer using CSS.
         </p>
-    </section>
+    </main>
 </body>
 </html>
