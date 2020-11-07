@@ -1,9 +1,7 @@
 
 @import url(styles.css);
-@import url(header.css);
-/*
-@import url(footer.css);
-*/
+@import url(layout.css);
+
 /* Blog Styles */
 .blog-posts {
   display: flex;

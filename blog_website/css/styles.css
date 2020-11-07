@@ -23,7 +23,6 @@ h2,
 h3,
 p {
   margin-top: 0;
-  margin-bottom: 1em;
   padding: 0;
 
 }
@@ -31,6 +30,7 @@ p {
 h1 {
   font-size: 2em;
   text-transform: capitalize;
+  margin: 0;
 }
 
 h2 {
@@ -67,12 +67,6 @@ a:link {
   text-decoration: none;
 }
 
-/* pre formatted text for displaying code */
-pre {
-  overflow-x: auto;
-  background: var(--light-gray);
-}
-
 /* make non text elements responsive */
 img,
 embed,
@@ -91,11 +85,6 @@ button {
 }
 
 /*CLASS STYLES */
-
-/* section style */
-.section {
-  margin-bottom: 3rem;
-}
 
 /* alert box style */
 .notice {
@@ -170,11 +159,4 @@ button {
   background: var(--white);
 }
 
-/* disable navigation links and buttons */
-.nav-disable {
-  pointer-events: none;
-  cursor: default;
-  text-decoration: none;
-  color: var(--gray);
-}
 
