@@ -3,17 +3,21 @@
 
 /* BLOG POST STYLES */
 
-/*main layout */
-.main-layout {
+/*page layout */
+.page-layout {
   display: grid;
   grid-area: main;
   grid-template-areas:
+    "logo-box"
+    "navbar"
     "social"
     "post-title"
     "author-card"
     "image-box"
-    "article";
+    "article"
+    "footer";
   grid-gap: 20px;
+  padding: 30px 10px;
 }
 
 /* social media */
@@ -31,12 +35,6 @@
   font-size: 30x;
   margin-right: 10px;
   cursor: pointer;
-}
-
-/* post title */
-.post-title {
-  grid-area: post-title;
-  text-align: center;
 }
 
  /* author card */
@@ -92,27 +90,49 @@
   flex-direction: column;
 }
 
+.post-title {
+  display: flex;
+  grid-area: post-title;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .post-intro {
   font-size: 1.1em;
   margin-bottom: 20px;
  }
 
+ h2 {
+   text-align: center;
+ }
 
-/*
-@media screen and (min-width: 1200px) {
-  .blog-post {
-    display: grid;
-    grid-template-columns:  1fr 3fr;
-    grid-template-rows: 50px 1fr;
+@media screen and (min-width: 768px) {
+
+  .page-layout {
+    grid-template-columns: 222px 1fr;
+    grid-template-rows: 50px 65px 222px 300px 1fr 50px;
     grid-template-areas:
-    "share content"
-    "post-title "
-    "post-image"
-    "author"
-    "content"
-    "footer";
-    grid-gap: 10px;
-    margin-top: 30px;
+      "logo-box navbar"
+      "social post-title"
+      "image-box article"
+      "author-card article"
+      "blank article"
+      "footer footer";
+      grid-column-gap: 20px;
   }
+
+  .navbar {
+    flex-direction: row;
+   }
+
+   .footer {
+     flex-direction: row;
+   }
+
+   h2 {
+     text-align: left;
+   }
 }
-*/
+
+

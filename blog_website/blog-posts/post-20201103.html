@@ -7,120 +7,121 @@
     <title>Document</title>
 </head>
 <body class="page-layout">
-    <header class="header">
-        <div class="logo-box">
-            <a class="logo" href="../index.html"><img src="../img/pwa.png"></a>
-        </div>
-        <div class="navbar">
+    <div class="logo-box">
+        <a href="../index.html"><img class="logo" src="../img/pwa.png"alt="logo"></a>
+    </div>
+    <section class="navbar">
             <a class="nav-button" href="#">About</a>
             <a class="nav-button" href="#">Contact</a>
             <a class="nav-button" href="#">Subscribe</a>
-        </div>
-    </header>
-    <main class="main-layout">
-        <section class="social">
-            <a href="#"><img class="share-icon" src="../img/facebook.png" alt="facebook icon"></a>
-            <a href="#"><img class="share-icon" src="../img/linkedin.png" alt="linkedin icon"></a>
-            <a href="#"><img class="share-icon" src="../img/twitter.png" alt="twitter icon"></a>
-        </section>
-        <div class="post-title">
-            <h1>Should You Give Bootstrap The Boot?</h1>
-        </div>
-        <div class="post-image-box">
-            <img class="post-image" src="../img/css_grid.png" alt="blog post image">
-            <p class="post-image-caption">CSS - GRID</p>
-        </div>
-        <section class="author-card">
-            <img class="author-image" src="../img/royseeber.png" alt="author picture">
-            <p class="author-name">By Roy Seeber</p>
-            <p class="author-company">Freelance Website Developer</p>
-            <p class="author-bio">Roy is an experienced full stack software developer.
-                His current focus is on developing Progressive Web Applications
-                and hosting them on Serverless Cloud Platforms.
-            </p>
-        </section>
-        <article class="article">
-            <p class="post-intro">
+    </section>
+    <section class="social">
+        <a href="#"><img class="share-icon" src="../img/facebook.png" alt="facebook icon"></a>
+        <a href="#"><img class="share-icon" src="../img/linkedin.png" alt="linkedin icon"></a>
+        <a href="#"><img class="share-icon" src="../img/twitter.png" alt="twitter icon"></a>
+    </section>
+    <div class="post-title">
+        <h1>Should You Give Bootstrap The Boot?</h1>
+    </div>
+    <div class="post-image-box">
+        <img class="post-image" src="../img/css_grid.png" alt="blog post image">
+        <p class="post-image-caption">CSS - GRID</p>
+    </div>
+    <section class="author-card">
+        <img class="author-image" src="../img/royseeber.png" alt="author picture">
+        <p class="author-name">By Roy Seeber</p>
+        <p class="author-company">Freelance Website Developer</p>
+        <p class="author-bio">Roy is an experienced full stack software developer.
+            His current focus is on developing Progressive Web Applications
+            and hosting them on Serverless Cloud Platforms.
+        </p>
+    </section>
+    <article class="article">
+        <section class="post-intro">
+            <p>
                 If you're like me, you would have come across frameworks like Bootstrap while trying to figure out the nuances
                 of responsive design. You probably sat down over a weekend and began playing around with container, row and column classes
                 unable to <b>contain</b> your excitement as columns began automatically appearing and disappearing as you resized your screen.
                 With the advent of HTML 5 and the CSS Grid component this has now become child's play.
             </p>
-            <br>
-            <h2 class="text-center">CSS Grid Demo</h2>
-            <p>
-                With just a few lines of code you can set up a grid that is not only responsive but fluid. In other words it will
-                dynamically resize itself as you resize your screen.
-            </p>
-            <p>
-                The following sets up a 12 x 12 grid where the columns are sized
-                as fractional units of equal size. A fractional unit represents the actual available space
-                after subtracting out the space used up by fixed size elements, margins and padding.
-            </p>
-            <div class="code-box">
-                <img class="code-image" src="../img/demo-grid.png" alt="css code">
-            </div>
-            <p>
-                We can then reference any area of the grid with simple column and row number references like this.
-            </p>
-            <div class="code-box">
-                <img class="code-image" src="../img/demo-box.png" alt="css code">
-            </div>
-            <p>
-                The above is saying, draw a bounding box starting at column 4 extending across 6 columns,
-                and starting at row 4 extending down 6 rows.
-            </p>
-            <p>
-                Now we will create the html code to draw a box centered inside the grid. If you were to resize the
-                browser window, you would notice that the box inside the grid shrinks and grows while maintaining
-                its position relative to the grid.
-            </p>
-            <div class="code-box">
-                <img class="code-image" src="../img/demo-grid-html.png" alt="html code">
-            </div>
-            <div class="code-box">
-                <img class="code-image" src="../img/demo-grid-out.png" alt="html code">
-            </div>
-            <br>
-            <h2 class="text-center">Responsive Text Demo</h2>
-            <p>
-                Another item that is getting a fair amout of press these days is fluid typography which is just a fancy way
-                of saying "responsive text". I will now demonstrate just how trivial this amazing feat is.
-            </p>
-            <div class="code-box">
-                <img class="code-image" src="../img/responsive-text-css.png" alt="css code">
-            </div>
-            <p>
-                That's it. Its literally a 1 liner! The css code is setting the font-size to 3 percent of the
-                viewport width which will cause the text size to dynamically change as the screen width expands and contracts.
-                Lets take a look at some html to see the effect.
-            </p>
-            <div class="code-box">
-                <img class="code-image" src="../img/responsive-text-html.png" alt="html code">
-            </div>
-            <p>
-                In the image below the first line of text is what you will see at a screen width of 600px.
-                The second line of text is what you will see at a screen width of 1200px.
-            </p>
-            <div class="code-box">
-                <img class="code-image" src="../img/responsive-text-out.png" alt="text size comparisons">
-            </div>
-            <br>
-            <h2 class="text-center">Final Thoughts</h2>
-            <p>If you want to experiment with these ideas on your own, make sure you have the following meta tag in
-                the head section of your html page.
-                &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-            </p>
-            <p>
-                Hopefully you will now feel inspired to implement your own responsive web designs without
-                relying on third party frameworks. In the era of Progressive Web Applications where performance
-                is so vital; you would do well to streamline your apps by disposing of those monolithic frameworks
-                that keep you trapped inside another persons head. Say goodbye to Bootstrap, Materialize, JQuery , React,
-                Angular and all the other bloatware. Say hello to becoming your own designer using CSS.
-            </p>
-        </article>
-    </main>
+        </section>
+        <br>
+        <h2>CSS Grid Demo</h2>
+        <p>
+            With just a few lines of code you can set up a grid that is not only responsive but fluid. In other words it will
+            dynamically resize itself as you resize your screen.
+        </p>
+        <p>
+            The following sets up a 12 x 12 grid where the columns are sized
+            as fractional units of equal size. A fractional unit represents the actual available space
+            after subtracting out the space used up by fixed size elements, margins and padding.
+        </p>
+        <div class="code-box">
+            <img class="code-image" src="../img/demo-grid.png" alt="css code">
+        </div>
+        <p>
+            We can then reference any area of the grid with simple column and row number references like this.
+        </p>
+        <div class="code-box">
+            <img class="code-image" src="../img/demo-box.png" alt="css code">
+        </div>
+        <p>
+            The above is saying, draw a bounding box starting at column 4 extending across 6 columns,
+            and starting at row 4 extending down 6 rows.
+        </p>
+        <p>
+            Now we will create the html code to draw a box centered inside the grid. If you were to resize the
+            browser window, you would notice that the box inside the grid shrinks and grows while maintaining
+            its position relative to the grid.
+        </p>
+        <div class="code-box">
+            <img class="code-image" src="../img/demo-grid-html.png" alt="html code">
+        </div>
+        <div class="code-box">
+            <img class="code-image" src="../img/demo-grid-out.png" alt="html code">
+        </div>
+        <br>
+        <h2>Responsive Text Demo</h2>
+        <p>
+            Another item that is getting a fair amout of press these days is fluid typography which is just a fancy way
+            of saying "responsive text". I will now demonstrate just how trivial this amazing feat is.
+        </p>
+        <div class="code-box">
+            <img class="code-image" src="../img/responsive-text-css.png" alt="css code">
+        </div>
+        <p>
+            That's it. Its literally a 1 liner! The css code is setting the font-size to 3 percent of the
+            viewport width which will cause the text size to dynamically change as the screen width expands and contracts.
+            Lets take a look at some html to see the effect.
+        </p>
+        <div class="code-box">
+            <img class="code-image" src="../img/responsive-text-html.png" alt="html code">
+        </div>
+        <p>
+            In the image below the first line of text is what you will see at a screen width of 600px.
+            The second line of text is what you will see at a screen width of 1200px.
+        </p>
+        <div class="code-box">
+            <img class="code-image" src="../img/responsive-text-out.png" alt="text size comparisons">
+        </div>
+        <br>
+        <h2>Final Thoughts</h2>
+        <p>If you want to experiment with these ideas on your own, make sure you have the following meta tag in
+            the head section of your html page.
+            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+        </p>
+        <p>
+            Hopefully you will now feel inspired to implement your own responsive web designs without
+            relying on third party frameworks. In the era of Progressive Web Applications where performance
+            is so vital; you would do well to streamline your apps by disposing of those monolithic frameworks
+            that keep you trapped inside another persons head. Say goodbye to Bootstrap, Materialize, JQuery , React,
+            Angular and all the other bloatware. Say hello to becoming your own designer using CSS.
+        </p>
+    </article>
     <footer class="footer">
+        <p>Copyright 2020</p>
+        <a href="#">Terms</a>
+        <a href="#">Privacy Policy</a>
     </footer>
 </body>
 </html>
