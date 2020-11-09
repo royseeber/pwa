@@ -58,7 +58,9 @@ blockquote {
 a {
   font-weight: bold;
   font-size: 1.1em;
+  padding-top: 10px;
   color: var(--color1);
+  cursor: pointer;
 }
 
 a:visited {
@@ -160,5 +162,16 @@ button {
 .bg-white {
   background: var(--white);
 }
+
+/* other */
+.float-right {
+  float: right;
+}
+
+.float-left {
+  float: left;
+}
+
+
 
 

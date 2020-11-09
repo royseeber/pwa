@@ -2,11 +2,33 @@
 @import url(styles.css);
 @import url(layout.css);
 
+.page-layout {
+  display: grid;
+  grid-template-areas:
+    "logo-box"
+    "site-name"
+    "navbar"
+    "blog-info"
+    "blog-posts"
+    "footer";
+  grid-gap: 20px;
+  padding: 30px 10px;
+}
+
+.blog-info {
+  background: var(--color3);
+  color: var(--black);
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  padding: 20px;
+  border: 4px solid var(--color1);
+}
+
 /* Blog Styles */
 .blog-posts {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  grid-area: blog-posts;
+  flex-direction: column;
   justify-content: start;
   justify-items: flex-start;
  }
@@ -15,29 +37,32 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  max-width: 400px;
-  height: auto;
-  padding: 10px;
-  margin: 5px;
-  border: 2px solid #808080;
+  padding: 10px 10px 0 10px;
+  margin-bottom: 20px;
+  border: 2px solid var(--gray);
 
 }
 
 .card-title {
    font-weight: bold;
+   margin-bottom: 15px;
  }
 
-.card-bottom {
+/* featured card styles */
+#featured {
+  border: 4px solid var(--color1)
+}
+
+.featured-caption {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   align-items: center;
 }
 
-.feature-card {
-  box-shadow: 5px 5px;
+.featured-image {
+  width: 100px;
+  margin: 0 10px 10px 0;
 }
-
 
 
 

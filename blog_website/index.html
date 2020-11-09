@@ -6,83 +6,87 @@
     <link rel="stylesheet" href="css/blog.css">
     <title>PWA Blog</title>
 </head>
-<body>
-    <header class="header">
-        <img class="logo" src="img/pwa.png">
-        <div class="navbar">
-
+<body class="page-layout">
+    <!-- header start -->
+    <div class="logo-box">
+        <a href="../index.html"><img class="logo" src="../img/pwa.png"alt="logo"></a>
+    </div>
+    <div class="site-name">Front To End</div>
+    <section class="navbar">
+        <a class="nav-button" href="#">About</a>
+        <a class="nav-button" href="#">Contact</a>
+        <a class="nav-button" href="#">Subscribe</a>
+    </section>
+    <!-- header end -->
+    <!-- main start -->
+    <p class="blog-info">This blog offers tips on building Progressive Web Applications.
+        Our blog posts cover everything from front end design, creating native like phone apps,
+        integrating with third party API's and website hosting. Please contact us if you
+        are interested in contributing to this site. We are currently seeking articles
+        about serverless webhosting on Google's Firebase platform.
+    </p>
+    <section class="blog-posts">
+        <div class="card" id="featured">
+            <span class="card-title">Should You Give Bootstrap the Boot!</span>
+            <div class="featured-caption">
+                <img class="featured-image float-left" src="img/bootstrap.png" alt="bootstrap logo">
+                <p>
+                    Are you diluting your brand using  a third party design system.
+                    Creating a responsive web site using modern CSS is easier than you think.
+                </p>
+            </div>
+            <br>
+            <span class="text-italic">2020-11-03&nbsp;&nbsp;&nbsp; By Roy Seeber</span>
+            <a href="/blog-posts/post-20201103.html">Read Now</a>
+         </div>
+        <div class="card">
+            <span class="card-title">Ratione quam dolorem sit rerum</span>
+            <p>Ratione quam dolorem sit rerum repudiandae totam ullam, quidem a ad obcaecati in fugit itaque neque, minus suscipit.</p>
+            <br>
+            <span class="text-italic">1974-01-01&nbsp;&nbsp;&nbsp; By Adrian Frutiger</span>
+            <a class="nav-disable" href="#">Read Now</a>
         </div>
-    </header>
-    <main>
-        <p class="text-large">This blog offers tips on building Progressive Web Applications.</p>
-        <section class="blog-posts">
-            <div class="card feature-card">
-                <span class="card-title">Why You Should Give Bootstrap the Boot!</span>
-                <p>Ratione quam dolorem sit rerum repudiandae totam ullam, quidem a ad obcaecati in fugit itaque neque, minus suscipit.</p>
-                <div class="card-bottom">
-                    <span class="text-italic">By: Roy Seeber</span>
-                    <span>2020-11-03</span>
-                    <span><a href="/blog-posts/post-20201103.html">Read Now</a></span>
-                </div>
-            </div>
-            <div class="card">
-                <span class="card-title">Why You Should Give Bootstrap the Boot!</span>
-                <p>Ratione quam dolorem sit rerum repudiandae totam ullam, quidem a ad obcaecati in fugit itaque neque, minus suscipit.</p>
-                <div class="card-bottom">
-                    <span class="text-italic">By: Roy Seeber</span>
-                    <span>2020-11-03</span>
-                    <span><a href="#">Read Now</a></span>
-                </div>
-            </div>
-            <div class="card">
-                <span class="card-title">Why You Should Give Bootstrap the Boot!</span>
-                <p>Ratione quam dolorem sit rerum repudiandae totam ullam, quidem a ad obcaecati in fugit itaque neque, minus suscipit.</p>
-                <div class="card-bottom">
-                    <span>By Roy Seeber</span>
-                    <span>2020-11-03</span>
-                    <span><a href="#">Read Now</a></span>
-                </div>
-            </div>
-            <div class="card">
-                <span class="card-title">Why You Should Give Bootstrap the Boot!</span>
-                <p>Itaque repudiandae, officia, praesentium nesciunt explicabo qui ea ipsum reiciendis modi eaque inventore in porro expedita optio quae ab blanditiis voluptatum culpa.</p>
-                <div class="card-bottom">
-                    <span>By Roy Seeber</span>
-                    <span>2020-11-03</span>
-                    <span><a href="#">Read Now</a></span>
-                </div>
-            </div>
-            <div class="card">
-                <span class="card-title">Why You Should Give Bootstrap the Boot!</span>
-                <p>Corporis perferendis recusandae consequatur, aperiam soluta consequuntur neque beatae, amet laudantium doloribus sint ratione rem nihil incidunt iusto? Doloribus, sapiente!</p>
-                <div class="card-bottom">
-                    <span class="text-italic">By Roy Seeber</span>
-                    <span>2020-11-03</span>
-                    <span><a href="#">Read Now</a></span>
-                </div>
-            </div>
-            <div class="card">
-                <span class="card-title">Why You Should Give Bootstrap the Boot!</span>
-                <p>Vero necessitatibus quam provident sequi sapiente quae, totam quia illum voluptates eligendi voluptatem at. Consequuntur vel, expedita aspernatur nulla asperiores tempora libero.</p>
-                <div class="card-bottom">
-                    <span>By Roy Seeber</span>
-                    <span>2020-11-03</span>
-                    <span><a href="#">Read Now</a></span>
-                </div>
-            </div>
-            <div class="card">
-                <span class="card-title">Why You Should Give Bootstrap the Boot!</span>
-                <p>Accusamus perspiciatis saepe nulla ipsam quos, nisi obcaecati adipisci iusto numquam aliquam earum optio esse unde tempora totam, doloribus alias doloremque accusantium.</p>
-                <div class="card-bottom">
-                    <span>By Roy Seeber</span>
-                    <span>2020-11-03</span>
-                    <span><a href="#">Read Now</a></span>
-                </div>
-            </div>
-        <section>
-    </main>
-    <footer>
-
+        <div class="card">
+            <span class="card-title">Mollitia vero asperiores adipisci</span>
+            <p>Perspiciatis ratione nesciunt illo cum nam sit et explicabo autem fugit. Praesentium ducimus quas officia tenetur architecto placeat?</p>
+            <br>
+            <span class="text-italic">1957-01-01&nbsp;&nbsp;&nbsp; By Max Miedinger</span>
+            <a class="nav-disable" href="#">Read Now</a>
+        </div>
+        <div class="card">
+            <span class="card-title">Itaque repudiandae, officia, praesentium?</span>
+            <p>Itaque repudiandae, officia, praesentium nesciunt explicabo qui ea ipsum reiciendis modi eaque inventore in porro expedita optio quae ab blanditiis voluptatum culpa.</p>
+            <br>
+            <span class="text-italic">1931-01-01&nbsp;&nbsp;&nbsp; By Victor Lardent</span>
+            <a class="nav-disable" href="#">Read Now</a>
+        </div>
+        <div class="card">
+            <span class="card-title">Corporis perferendis recusandae consequatur</span>
+            <p>Corporis perferendis recusandae consequatur, aperiam soluta consequuntur neque beatae, amet laudantium doloribus sint ratione rem nihil incidunt iusto? Doloribus, sapiente!</p>
+            <br>
+            <span class="text-italic">1927-01-01&nbsp;&nbsp;&nbsp; By Paul Renner</span>
+            <a class="nav-disable" href="#">Read Now</a>
+        </div>
+        <div class="card">
+            <span class="card-title">Vero necessitatibus quam provident sequi sapiente quae</span>
+            <p>Vero necessitatibus quam provident sequi sapiente quae, totam quia illum voluptates eligendi voluptatem at. Consequuntur vel, expedita aspernatur nulla asperiores tempora libero.</p>
+            <br>
+            <span class="text-italic">1798-01-01&nbsp;&nbsp;&nbsp; By Giambattista Bodoni</span>
+            <a class="nav-disable" href="#">Read Now</a>
+        </div>
+        <div class="card">
+            <span class="card-title">Accusamus perspiciatis saepe nulla ipsam quos</span>
+            <p>Accusamus perspiciatis saepe nulla ipsam quos, nisi obcaecati adipisci iusto numquam aliquam earum optio esse unde tempora totam, doloribus alias doloremque accusantium.</p>
+            <br>
+            <span class="text-italic">1468-01-01&nbsp;&nbsp;&nbsp; By Johannes Gutenberg</span>
+            <a class="nav-disable" href="#">Read Now</a>
+        </div>
+    <section>
+    <!-- main end -->
+    <footer class="footer">
+        <p>Copyright 2020</p>
+        <a href="#">Terms</a>
+        <a href="#">Privacy Policy</a>
     </footer>
 </body>
 </html>

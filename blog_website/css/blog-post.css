@@ -6,15 +6,14 @@
 /*page layout */
 .page-layout {
   display: grid;
-  grid-area: main;
   grid-template-areas:
     "logo-box"
+    "site-name"
     "navbar"
     "social"
-    "post-title"
-    "author-card"
     "image-box"
     "article"
+    "author-card"
     "footer";
   grid-gap: 20px;
   padding: 30px 10px;
@@ -90,14 +89,6 @@
   flex-direction: column;
 }
 
-.post-title {
-  display: flex;
-  grid-area: post-title;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
 .post-intro {
   font-size: 1.1em;
   margin-bottom: 20px;
@@ -109,22 +100,19 @@
 
 @media screen and (min-width: 768px) {
 
-  .page-layout {
-    grid-template-columns: 222px 1fr;
-    grid-template-rows: 50px 65px 222px 300px 1fr 50px;
-    grid-template-areas:
-      "logo-box navbar"
-      "social post-title"
-      "image-box article"
-      "author-card article"
-      "blank article"
-      "footer footer";
-      grid-column-gap: 20px;
+  .site-name {
+    text-align: left;
+    padding-top: 25px;
   }
 
-  .navbar {
+   .navbar {
     flex-direction: row;
+    justify-content: flex-end;
    }
+
+   .nav-button {
+     width: 100px;
+    }
 
    .footer {
      flex-direction: row;
@@ -133,6 +121,20 @@
    h2 {
      text-align: left;
    }
+
+  .page-layout {
+    grid-template-columns: 222px 1fr;
+    grid-template-rows: 50px 70px 222px 300px 1fr 50px;
+    grid-template-areas:
+      "logo-box site-name"
+      "social navbar"
+      "image-box article"
+      "author-card article"
+      "blank article"
+      "footer footer";
+      grid-column-gap: 20px;
+  }
+
 }
 
 
