@@ -1,4 +1,4 @@
-
+@import url(reset.css);
 @import url(styles.css);
 @import url(layout.css);
 
@@ -7,7 +7,7 @@
 .page-layout {
   display: grid;
   grid-template-areas:
-    "logo-box"
+    "logo"
     "site-name"
     "navbar"
     "blog-info"
@@ -40,7 +40,6 @@
   padding: 10px 10px 0 10px;
   margin-bottom: 20px;
   border: 2px solid var(--gray);
-
 }
 
 .card-title {
@@ -72,45 +71,45 @@
 
 @media screen and (min-width: 768px) {
 
-.logo-box {
-  justify-content: flex-start;
+.logo {
+  margin: none;
 }
 
-  .site-name {
-    text-align: left;
-    padding-top: 30px;
+.site-name {
+  text-align: left;
+  padding-top: 20px;
+}
+
+  .navbar {
+  flex-direction: row;
+  max-width: 600px;
   }
 
-   .navbar {
-    flex-direction: row;
-    max-width: 600px;
-   }
+.blog-posts{
+  flex-direction: row;
+  flex-wrap: wrap;
+}
 
-  .blog-posts{
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
+.card {
+  width: 300px;
+  margin: 0 20px 20px 0;
+}
 
-  .card {
-    width: 300px;
-    margin: 0 20px 20px 0;
-  }
+.footer {
+  flex-direction: row;
+}
 
-  .footer {
-     flex-direction: row;
-  }
-
-  .page-layout {
-    grid-template-columns: 200px 100px 1fr;
-    grid-template-rows: 70px 70px 250px 1fr 50px;
-    grid-template-areas:
-      "logo-box site-name site-name"
-      "navbar navbar navbar"
-      "blog-info blog-info featured-card"
-      "blog-posts blog-posts blog-posts"
-      "footer footer footer";
-      grid-column-gap: 20px;
-  }
+.page-layout {
+  grid-template-columns: 200px 100px 1fr;
+  grid-template-rows: 50px 50px 250px 1fr 50px;
+  grid-template-areas:
+    "logo site-name site-name"
+    "navbar navbar navbar"
+    "blog-info blog-info featured-card"
+    "blog-posts blog-posts blog-posts"
+    "footer footer footer";
+    grid-column-gap: 20px;
+}
 
 
 
