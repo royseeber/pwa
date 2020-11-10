@@ -102,17 +102,12 @@
 
   .site-name {
     text-align: left;
-    padding-top: 25px;
+    padding-top: 30px;
   }
 
    .navbar {
     flex-direction: row;
-    justify-content: flex-end;
    }
-
-   .nav-button {
-     width: 100px;
-    }
 
    .footer {
      flex-direction: row;
@@ -124,7 +119,7 @@
 
   .page-layout {
     grid-template-columns: 222px 1fr;
-    grid-template-rows: 50px 70px 222px 300px 1fr 50px;
+    grid-template-rows: 70px 70px 222px 300px 1fr 50px;
     grid-template-areas:
       "logo-box site-name"
       "social navbar"
