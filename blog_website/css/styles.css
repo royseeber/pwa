@@ -1,101 +1,4 @@
-/* stadard styles to be used across all web pages */
-
-/* root element styles*/
-html {
-  font-family: "HelveticaNeue", "Helvetica", Arial, sans-serif;
-  font-size: 16px;
-  --color1: #00838f;
-  --color2: #324B4E;
-  --color3: #95B0B4;
-  --black: #000;
-  --light-gray: #D3D3D3;
-  --gray: #888;
-  --white: #fff;
-  --bkp-small: 480px;
-  --bkp-medium: 768px;
-  --bkp-large: 992px;
-  --bkp-xlarge: 1200px;
-}
-
-body {
-  margin: 0;
-}
-
-/* typography */
-h1,
-h2,
-h3,
-p {
-  margin-top: 0;
-  padding: 0;
-  margin-bottom: 10px;
-
-}
-
-h1 {
-  font-size: 2em;
-  text-transform: capitalize;
-}
-
-h2 {
-  font-size: 1.75em;
-  text-transform: capitalize;
-}
-
-h3 {
-  font-size: 1.5em;
-}
-
-blockquote {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  margin-left: 50px;
-  padding-left: 15px;
-  border-left: 3px solid var(--gray);
-}
-
-/* links */
-a {
-  font-weight: bold;
-  font-size: 1.1em;
-  padding-top: 10px;
-  color: var(--color1);
-  cursor: pointer;
-}
-
-a:visited {
-  text-decoration: none;
-}
-
-a:link {
-  text-decoration: none;
-}
-
-/* make non text elements responsive */
-img,
-embed,
-object,
-iframe {
-  width: 100%;
-  height: auto;
-}
-
-/* ensure touch targets can be reached on small devices */
-nav,
-a,
-button {
-  min-width: 40px;
-  min-height: 40px;
-}
-
 /*CLASS STYLES */
-
-/* alert box style */
-.notice {
-  width: 60%;
-  border: 3px solid var(--color1);
-  padding: 10px;
-}
 
 /* text styles */
 .text-small {
@@ -163,6 +66,18 @@ button {
   background: var(--white);
 }
 
+/* navigation */
+.nav-button:hover {
+  background-color: var(--black);
+}
+
+.nav-disable {
+    pointer-events: none;
+    cursor: default;
+    text-decoration: none;
+    color: var(--gray);
+}
+
 /* other */
 .float-right {
   float: right;
@@ -171,7 +86,3 @@ button {
 .float-left {
   float: left;
 }
-
-
-
-
