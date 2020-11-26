@@ -18,6 +18,9 @@
  *
 */
 
+// variables used to control showing and hiding of menu
+let prevScrollPos = 0;
+let prevScrollDown = true;
 
 /**
  * End Global Variables
@@ -66,7 +69,7 @@ function createNavMenu(){
 }
 
 // Add class 'active' to section when near top of viewport
-function activateSection(event) {
+function activateSection() {
     sections = document.querySelectorAll('section');
     sections.forEach(element => {
         if (nearTop(element)) {
@@ -77,15 +80,33 @@ function activateSection(event) {
     });
 }
 
-// Scroll to anchor ID
-function scrollToSection() {
-    //using css html element scroll-behavior: smooth - no javascript required
-
+// Scroll to section
+//scrolling implemented via css html scroll-behavior: smooth and following an anchor tag
+function scrollToSection(event) {
     //hide menu bar after a  menu item is clicked
-    const navbarList = document.querySelector('.navbar__menu');
-    navbarList.style.display = 'none';
+    const menu = document.querySelector('.navbar__menu');
+    menu.classList.add('hide');
 }
 
+//show menu if user scrolls up and hide menu if user scrolls down
+function toggleMenu(){
+    const menu = document.querySelector('.navbar__menu');
+    const curScrollPos = window.scrollY;
+
+    /* Only show menu if current scroll direction is up and previous scroll direction was down
+     - this prevents displaying menu in response to a menu generated scroll up event */
+    if (curScrollPos < prevScrollPos && prevScrollDown) {
+        menu.classList.remove('hide');
+        prevScrollDown = false;
+
+    // hide menu if user scrolls down
+    } else if (curScrollPos > prevScrollPos) {
+        menu.classList.add('hide');
+        prevScrollDown = true;
+    }
+
+    prevScrollPos = curScrollPos;
+}
 
 /**
  * End Main Functions
@@ -93,16 +114,40 @@ function scrollToSection() {
  *  *
  * */
 
-//Build Menu
+ // build navigation menu
 createNavMenu();
 
 //Scroll to section on link click
 const navbar = document.querySelector('.navbar__menu');
 navbar.addEventListener('click', scrollToSection);
 
-// Set sections as active
-window.addEventListener('scroll', (event) => {
-    setTimeout((event) => {
-        activateSection(event);
-    }, 500);
-});
+/* scroll event to activate section
+ - only allow one event handler to run at any given time */
+let activateTimerOn = false;
+window.addEventListener('scroll', () => {
+    if (!activateTimerOn) {
+        activateTimerOn = true;
+        setTimeout(() => {
+            activateSection();
+            activateTimerOn = false;
+        }, 300);
+    }
+}, {passive: true});
+
+/* scroll event to toggle menu
+ - only allow one event handler to run at any given time */
+let menuTimerOn = false;
+window.addEventListener('scroll', () => {
+    if (!menuTimerOn) {
+        menuTimerOn = true;
+        setTimeout(() => {
+            toggleMenu();
+            menuTimerOn = false;
+        }, 300);
+    }
+}, {passive: true});
+
+
+
+
+

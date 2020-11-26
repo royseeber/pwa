@@ -91,6 +91,11 @@ section {
     transition: ease 0.3s all;
 }
 
+/* hide element */
+.hide {
+    display: none;
+}
+
 /* Header Styles */
 .page__header {
     background: #fff;
