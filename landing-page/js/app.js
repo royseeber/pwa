@@ -24,16 +24,22 @@
  * Start Helper Functions
  *
 */
+// create navigation link
 function createNavItem(itemText, anchorId){
-
-    //create navigation list element
     const navItem = document.createElement('li');
-    navItem.classList.add('menu__link');
-    navItem.setAttribute('data-location', anchorId);
-    navItem.textContent = itemText;
+    const navLink = document.createElement('a');
+    navLink.classList.add('menu__link');
+    navLink.setAttribute('href', '#' + anchorId);
+    navLink.textContent = itemText;
+    navItem.appendChild(navLink);
     return navItem;
 }
 
+// check if an element is near the top of viewport
+function nearTop(element){
+    const rect = element.getBoundingClientRect();
+    return (rect.top < 50);
+}
 
 /**
  * End Helper Functions
@@ -51,7 +57,6 @@ function createNavMenu(){
         const itemText = element.getAttribute('data-nav');
         const anchorId = element.getAttribute('id');
         const navItem = createNavItem(itemText, anchorId);
-        console.log(navItem);
         docFragment.appendChild(navItem);
     });
 
@@ -60,47 +65,44 @@ function createNavMenu(){
     navbarList.appendChild(docFragment);
 }
 
-
 // Add class 'active' to section when near top of viewport
 function activateSection(event) {
-    //TODO:
+    sections = document.querySelectorAll('section');
+    sections.forEach(element => {
+        if (nearTop(element)) {
+            element.classList.add('active');
+        } else {
+            element.classList.remove('active');
+        };
+    });
 }
 
-// Scroll to anchor ID using scrollTO event
-function scrollToSection(event){
-    anchorId =  event.target.getAttribute('data-location');
-    section =  document.getElementById(anchorId);
-    window.scrollTo({
-        top: section.offsetTop,
-        left: 0,
-        behavior: 'smooth'
-    });
+// Scroll to anchor ID
+function scrollToSection() {
+    //using css html element scroll-behavior: smooth - no javascript required
 
-    //hide menu bar
-    //TODO: create hide and show css classes
-    event.target.parentElement.style.display = 'none';
+    //hide menu bar after a  menu item is clicked
+    const navbarList = document.querySelector('.navbar__menu');
+    navbarList.style.display = 'none';
 }
 
 
 /**
  * End Main Functions
  * Begin Events
- *
-*/
+ *  *
+ * */
 
-//Assign Event Listeners
-function init(){
-    createNavMenu();
-    menuClickListener();
-    //activeSectionListener();
-}
+//Build Menu
+createNavMenu();
 
-// Scroll to section on link click
-function menuClickListener(){
-    const navbar = document.querySelector('.navbar__menu');
-    navbar.addEventListener('click', scrollToSection);
-}
+//Scroll to section on link click
+const navbar = document.querySelector('.navbar__menu');
+navbar.addEventListener('click', scrollToSection);
 
 // Set sections as active
-
-
+window.addEventListener('scroll', (event) => {
+    setTimeout((event) => {
+        activateSection(event);
+    }, 500);
+});
