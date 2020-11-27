@@ -28,7 +28,7 @@ let prevScrollDown = true;
  *
 */
 // create navigation link
-function createNavItem(itemText, anchorId){
+createNavItem = (itemText, anchorId) => {
     const navItem = document.createElement('li');
     const navLink = document.createElement('a');
     navLink.classList.add('menu__link');
@@ -39,7 +39,7 @@ function createNavItem(itemText, anchorId){
 }
 
 // check if an element is near the top of viewport
-function nearTop(element){
+nearTop = element => {
     const rect = element.getBoundingClientRect();
     return (rect.top < 50);
 }
@@ -51,7 +51,7 @@ function nearTop(element){
 */
 
 // build the nav
-function createNavMenu(){
+createNavMenu = () => {
 
     //generate menu items using page section info
     const docFragment = document.createDocumentFragment();
@@ -69,7 +69,7 @@ function createNavMenu(){
 }
 
 // Add class 'active' to section when near top of viewport
-function activateSection() {
+activateSection = () => {
     sections = document.querySelectorAll('section');
     sections.forEach(element => {
         if (nearTop(element)) {
@@ -81,9 +81,9 @@ function activateSection() {
 }
 
 // Scroll to section using ScrollTo method
-function scrollToSection(event) {
+scrollToSection = event => {
 
-    /* Scroll to section pertaining to clicked menu item
+    /* Scroll to section of a clicked menu item
     - Note: could create same effect with css html scroll-behavior: smooth */
 
     event.preventDefault();
@@ -101,7 +101,7 @@ function scrollToSection(event) {
 }
 
 //show menu if user scrolls up and hide menu if user scrolls down
-function toggleMenu(){
+toggleMenu = () => {
     const menu = document.querySelector('.navbar__menu');
     const curScrollPos = window.scrollY;
 
