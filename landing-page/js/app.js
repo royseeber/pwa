@@ -80,9 +80,21 @@ function activateSection() {
     });
 }
 
-// Scroll to section
-//scrolling implemented via css html scroll-behavior: smooth and following an anchor tag
+// Scroll to section using ScrollTo method
 function scrollToSection(event) {
+
+    /* Scroll to section pertaining to clicked menu item
+    - Note: could create same effect with css html scroll-behavior: smooth */
+
+    event.preventDefault();
+    sectionId = event.target.getAttribute('href').substring(1);
+    section = document.getElementById(sectionId);
+    window.scrollTo({
+        top: section.offsetTop,
+        left: 0,
+        behavior: 'smooth'
+      });
+
     //hide menu bar after a  menu item is clicked
     const menu = document.querySelector('.navbar__menu');
     menu.classList.add('hide');
