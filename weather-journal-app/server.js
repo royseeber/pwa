@@ -1,10 +1,16 @@
-//CONSTANTS
+/**
+ * Start Constants
+ *
+*/
 
 // Setup empty JS object to act as endpoint for all routes
 const projectData = [];
 
-
-//DEPENDENCIES
+/**
+ * End Constants
+ * Start Dependencies
+ *
+*/
 
 // Require Express to run server and routes
 const express = require('express');
@@ -24,24 +30,35 @@ const { resolve } = require('path');
 // Initialize the main project folder
 app.use(express.static('website'));
 
+/**
+ * End Dependencies
+ * Start Routes
+ *
+*/
 
-// ROUTES
+// Return all journal entries
+app.get('/journal', (req, res) => {
+    res.json(projectData);
+})
 
 // Return the most recently added journal entry
-app.get('/lastEntry', (req, res) => {
-    res.send(projectData[0]);
+app.get('/latestEntry', (req, res) => {
+    res.json(projectData[0]);
 })
 
 //Insert journal entry at beginning of projectData array
 app.post('/addData', (req, res) => {
     projectData.unshift(req.body);
-    console.log(projectData);
     res.sendStatus(200);
 } )
 
+/**
+ * End Routes
+ *
+*/
 
-// START SERVER
-const port =  8080;
+//Start Server
+const port =  process.env.PORT || 5000;
 const server = app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);
 })

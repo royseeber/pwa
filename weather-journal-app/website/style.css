@@ -5,8 +5,8 @@ body{
 
 #app{
     display: grid;
-    grid-auto-rows: minmax(150px, auto);
-    /* grid-template-columns:  */
+    grid-auto-rows: minmax(100px, auto);
+    height: 100vh;
     background: #f23557;
     color: #f0d43a;
     justify-content: center;
@@ -27,23 +27,32 @@ body{
 
 }
 
-#date{
-
+#date:before{
+    content: 'Date: ';
+    font-weight: bold;
+    color: #fff;
 }
 
-#temp{
-
+#temp:before{
+    content: 'Temperature: ';
+    font-weight: bold;
+    color: #fff;
 }
 
 #content{
-
+    display: flex;
+    flex-wrap: wrap;
 }
+
 
 .headline {
 
 }
 .title{
-
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #000;
+    background: #fff;
 }
 
 /*  Basic Styling To Override Default For Basic HTML Elements */
@@ -64,7 +73,7 @@ input{
 }
 
 button{
-    width: 400px;
+    width: 200px;
     height: 100px;
     background: #3b4a6b;
     color: #f0d43a;
@@ -78,6 +87,7 @@ h1{
 }
 
 textarea{
+    height: 150px;
     background:#22b2da;
     color: #f0d43a;
     font-size: 20px;

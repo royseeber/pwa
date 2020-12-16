@@ -1,4 +1,7 @@
- // CONSTANTS
+/**
+ * Define Constants
+ *
+*/
 
 // Current Date
 const d = new Date();
@@ -9,48 +12,71 @@ const apiKey = 'ca3cb4fdd5ccfb62a4ec53255ddfa5e7';
 const baseUrl = 'https://api.openweathermap.org/data/2.5/weather?';
 const units = 'imperial';
 
-
-// HELPER FUNCTIONS
+/**
+ * End Define Constants
+ * Start Helper Functions
+ *
+*/
 
 // GET JSON Data
-getJSON = async (url='') => {
-    res = await fetch(url);
+getJson = async (url='') => {
     try {
-        data = await res.json();
+        const res = await fetch(url);
+        const data = await res.json();
         return data;
-    } catch(error) {
-        console.log("error", error);
+    }
+    catch(error) {
+        console.log(error);
     }
 };
 
 // POST JSON data
-const postJSON = async (url='', data={})=> {
-    const res = await fetch(url, {
-        method: 'POST',
-        credentials: 'same-origin',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-    });
-    console.log(res);
+const postJson = async (url='', data={})=> {
+    try {
+        const res = await fetch(url, {
+            method: 'POST',
+            credentials: 'same-origin',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        });
+    }
+    catch {
+        console.log('error', error);
+    }
 }
 
+/**
+ * End Helper Functions
+ * Start Main Functions
+ *
+*/
 
-//MAIN FUNCTIONS
-
-// GET OpenWeatherMap Data
+// GET Open Weather Map Data
 const getTemperature = async (baseUrl, units, zip, apiKey) => {
-    url = `${baseUrl}units=${units}&zip=${zip},us&appid=${apiKey}`;
-    data = await getJSON(url);
-    return data.main.temp;
+    try {
+        url = `${baseUrl}units=${units}&zip=${zip},us&appid=${apiKey}`;
+        data = await getJson(url);
+        return data.main.temp;
+    }
+    catch (error) {
+        console.log(error);
+        return('N/A');
+    }
 };
 
 // Update DOM log entry
 const updateLogEntry = (date, temp, content) => {
+
+    //update entry holder fields
     document.querySelector('#date').innerHTML = date;
     document.querySelector('#temp').innerHTML = temp;
     document.querySelector('#content').innerHTML = content;
+
+    // Clear input fields
+    document.querySelector('#zip').value = '';
+    document.querySelector('#feelings').value = '';
 }
 
 // Update weather journal
@@ -61,26 +87,37 @@ const generate = async () => {
     const content = document.querySelector('#feelings').value;
 
     //get temperature from weather API
-    //temp = await getTemperature(baseUrl, units, zip, apiKey);
-
-    temp = 56.27;
+    temp = await getTemperature(baseUrl, units, zip, apiKey);
 
     //post data to server
     logEntry = {'date': curDate, 'temp': temp, 'content': content};
-     await postJSON('/addData', logEntry);
+    await postJson('/addData', logEntry);
 
-    //retrieve data from server
-    data = await getJSON('/lastEntry');
-    console.log(data);
+    //retrieve the latest weather journal entry
+    entry = await getJson('/latestEntry');
 
     //update DOM log entry
-    updateLogEntry(data.date, data.temp, data.content);
+    updateLogEntry(entry.date, entry.temp, entry.content);
 }
 
+/**
+ * End Main Functions
+ * Start Event Listeners
+ *
+*/
 
-//EVENT LISTENERS
+/**
+ * Generate Button - click event
+ * Ignore additional clicks if generate function is already running
+*/
+generateOn = false;
+document.querySelector('#generate').addEventListener('click', event => {
+    if (!generateOn) {
+        generateOn = true;
+        generate();
+        generateOn = false;
+    }
+});
 
-// Generate Button - click event
-document.querySelector('#generate').addEventListener('click', generate);
 
 
