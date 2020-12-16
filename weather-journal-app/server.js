@@ -47,9 +47,9 @@ app.get('/latestEntry', (req, res) => {
 })
 
 //Insert journal entry at beginning of projectData array
-app.post('/addData', (req, res) => {
+app.post('/addEntry', (req, res) => {
     projectData.unshift(req.body);
-    res.sendStatus(200);
+    res.json('Journal entry has been posted');
 } )
 
 /**

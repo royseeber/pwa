@@ -5,29 +5,27 @@ body{
 
 #app{
     display: grid;
-    grid-auto-rows: minmax(100px, auto);
-    height: 100vh;
+    height:100vh;
     background: #f23557;
     color: #f0d43a;
     justify-content: center;
+    align-content: center;
     grid-gap: 1em;
     font-size: 20px;
     font-family: 'Oswald', sans-serif;
 }
 
-.holder{
-
-}
-
 .entry{
+    height: 200px;
     background: rgba(59, 74, 107, .4);
-}
+    padding: 10px;
+ }
 
-#entryHolder{
+ #content{
+     overflow-y: auto;
+ }
 
-}
-
-#date:before{
+ #date:before{
     content: 'Date: ';
     font-weight: bold;
     color: #fff;
@@ -39,25 +37,27 @@ body{
     color: #fff;
 }
 
-#content{
-    display: flex;
-    flex-wrap: wrap;
+#content:before{
+    content: 'Notes: ';
+    font-weight: bold;
+    color: #fff;
 }
 
-
 .headline {
-
+    font-weight: bold;
+    color: #000;
 }
 .title{
     font-size: 1.1em;
     font-weight: bold;
     color: #000;
     background: #fff;
+    text-align: center;
 }
 
 /*  Basic Styling To Override Default For Basic HTML Elements */
 label{
-    display:block;
+    display: block;
     font-size: 27px;
 }
 
@@ -73,7 +73,7 @@ input{
 }
 
 button{
-    width: 200px;
+    width: 400px;
     height: 100px;
     background: #3b4a6b;
     color: #f0d43a;
@@ -87,7 +87,7 @@ h1{
 }
 
 textarea{
-    height: 150px;
+    max-height: 100px;
     background:#22b2da;
     color: #f0d43a;
     font-size: 20px;

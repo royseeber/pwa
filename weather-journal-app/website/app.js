@@ -91,7 +91,7 @@ const generate = async () => {
 
     //post data to server
     logEntry = {'date': curDate, 'temp': temp, 'content': content};
-    await postJson('/addData', logEntry);
+    await postJson('/addEntry', logEntry);
 
     //retrieve the latest weather journal entry
     entry = await getJson('/latestEntry');
