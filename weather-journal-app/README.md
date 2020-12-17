@@ -16,3 +16,5 @@ The project requires that Node.js be installed along with the following packages
 - Express
 - Body-Parser
 - Cors
+
+A package.json file in included in this project directory so you can install all dependencies by running "npm install" from the command line.
