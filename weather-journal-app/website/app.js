@@ -26,7 +26,7 @@ getJson = async (url='') => {
         return data;
     }
     catch(error) {
-        console.log(error);
+        console.log('error', error);
     }
 };
 
@@ -61,7 +61,7 @@ const getTemperature = async (baseUrl, units, zip, apiKey) => {
         return data.main.temp;
     }
     catch (error) {
-        console.log(error);
+        console.log('error', error);
         return('N/A');
     }
 };
@@ -106,18 +106,6 @@ const generate = async () => {
  *
 */
 
-/**
- * Generate Button - click event
- * Ignore additional clicks if generate function is already running
-*/
-generateOn = false;
-document.querySelector('#generate').addEventListener('click', event => {
-    if (!generateOn) {
-        generateOn = true;
-        generate();
-        generateOn = false;
-    }
-});
-
-
+// Generate Button - click event
+document.querySelector('#generate').addEventListener('click', generate);
 
