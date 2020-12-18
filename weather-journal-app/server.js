@@ -4,7 +4,7 @@
 */
 
 // Setup empty JS object to act as endpoint for all routes
-const projectData = [];
+const projectData = {};
 
 /**
  * End Constants
@@ -32,25 +32,53 @@ app.use(express.static('website'));
 
 /**
  * End Dependencies
+ * Start Main Functions
+ *
+*/
+
+//add journal entry to project data
+const addEntry = (req, res) => {
+
+    // initial projectData with a journal element for storing journal entries
+    if (!projectData.hasOwnProperty('journal')) {
+        projectData.journal = [];
+    }
+
+    //create new entry
+    const newEntry = {
+        'date': req.body.date,
+        'temp': req.body.temp,
+        'content': req.body.content
+    };
+
+    // add journal entry to the beginning of journal array
+    projectData.journal.unshift(newEntry);
+    res.json('Journal entry has been posted');
+}
+
+/**
+ * End Main Functions
  * Start Routes
  *
 */
 
+//Return projectData object
+app.get('/project', (req, res) => {
+    res.json(projectData);
+})
+
 // Return all journal entries
 app.get('/journal', (req, res) => {
-    res.json(projectData);
+    res.json(projectData.journal);
 })
 
 // Return the most recently added journal entry
 app.get('/latestEntry', (req, res) => {
-    res.json(projectData[0]);
+    res.json(projectData.journal[0]);
 })
 
-//Insert journal entry at beginning of projectData array
-app.post('/addEntry', (req, res) => {
-    projectData.unshift(req.body);
-    res.json('Journal entry has been posted');
-} )
+//Insert journal entry into projectData
+app.post('/addEntry', addEntry);
 
 /**
  * End Routes

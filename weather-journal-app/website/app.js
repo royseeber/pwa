@@ -20,31 +20,22 @@ const units = 'imperial';
 
 // GET JSON Data
 getJson = async (url='') => {
-    try {
-        const res = await fetch(url);
-        const data = await res.json();
-        return data;
-    }
-    catch(error) {
-        console.log('error', error);
-    }
+    const res = await fetch(url)
+    const data = await res.json();
+    return data;
 };
 
 // POST JSON data
 const postJson = async (url='', data={})=> {
-    try {
-        const res = await fetch(url, {
-            method: 'POST',
-            credentials: 'same-origin',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        });
-    }
-    catch {
-        console.log('error', error);
-    }
+
+    const res = await fetch(url, {
+        method: 'POST',
+        credentials: 'same-origin',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    });
 }
 
 /**
@@ -81,23 +72,32 @@ const updateLogEntry = (date, temp, content) => {
 
 // Update weather journal
 const generate = async () => {
+    try {
+        //get values from DOM
+        const zip = document.querySelector('#zip').value;
+        const content = document.querySelector('#feelings').value;
 
-    //get values from DOM
-    const zip = document.querySelector('#zip').value;
-    const content = document.querySelector('#feelings').value;
+        //get temperature from weather API
+        temp = await getTemperature(baseUrl, units, zip, apiKey);
 
-    //get temperature from weather API
-    temp = await getTemperature(baseUrl, units, zip, apiKey);
+        //post data to server
+        const logEntry = {
+            'date': curDate,
+            'temp': temp,
+            'content': content
+        };
 
-    //post data to server
-    logEntry = {'date': curDate, 'temp': temp, 'content': content};
-    await postJson('/addEntry', logEntry);
+        await postJson('/addEntry', logEntry);
 
-    //retrieve the latest weather journal entry
-    entry = await getJson('/latestEntry');
+        //retrieve the latest weather journal entry
+        data = await getJson('/project');
+        entry = data.journal[0];
 
-    //update DOM log entry
-    updateLogEntry(entry.date, entry.temp, entry.content);
+        //update DOM log entry
+        updateLogEntry(entry.date, entry.temp, entry.content);
+    } catch (error) {
+        console.log('error', error);
+    }
 }
 
 /**
