@@ -11,7 +11,7 @@ Html and css code are supplied, but the javascript code is written entirely from
 <br><br>
 
 ### Navigation
-Menus are build using data attributes embedded in each section element. The data attribute contains the menu text for that particular section.
+Menus are built using data attributes embedded in each section element. The data attribute contains the menu text for that particular section.
 When clicking a menu item the page is scrolled to the section that was selected and the menu is then hidden.
 <br><br>
 ### Toggle Menu
